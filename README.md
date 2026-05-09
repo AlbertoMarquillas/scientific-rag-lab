@@ -113,40 +113,47 @@ Current capabilities include:
 ```text
 scientific-rag-lab/
 │
+├── knowledge/                 # Markdown notes about RAG, Ollama, Qdrant, LlamaIndex and Inngest
+│   ├── rag/
+│   ├── ollama/
+│   ├── qdrant/
+│   ├── llamaindex/
+│   └── inngest/
+│
 ├── src/
-│   ├── core/
+│   ├── core/                  # Application configuration
 │   │   └── config.py
 │   │
-│   ├── frontend/
+│   ├── frontend/              # Static web interface
 │   │   ├── index.html
 │   │   ├── styles.css
 │   │   └── app.js
 │   │
-│   ├── ingestion/
+│   ├── ingestion/             # PDF ingestion, embeddings and answer generation
 │   │   ├── data_loader.py
 │   │   ├── embedder.py
+│   │   ├── generator.py
 │   │   └── pipeline.py
 │   │
-│   ├── models/
+│   ├── models/                # Pydantic schemas
 │   │   ├── ingestion.py
 │   │   ├── retrieval.py
 │   │   └── vector_store.py
 │   │
-│   ├── vector_database/
+│   ├── vector_database/       # Qdrant client wrapper
 │   │   └── vector_db.py
 │   │
-│   ├── workers/
+│   ├── workers/               # Inngest client and workflow functions
 │   │   ├── inngest_client.py
 │   │   └── inngest_functions.py
 │   │
-│   └── main.py
+│   └── main.py                # FastAPI application entry point
 │
-├── documents_base/
-├── vector_database/
-├── requirements.txt
-├── .env
-└── README.md
-```
+├── .env.example               # Example environment variables
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
 
 ---
 
